@@ -1,0 +1,106 @@
+<div class="page-name">
+  <span style="font-size: 1.5em;">Dashboard</span> 
+  <span style="font-size: 0.9em;">Página Inicial > {{pagename}}</span>
+</div>
+
+<div class="dashboard">
+  <div class="left-dashboard">
+    <div class="top-dashboard">
+      <div class="card">
+          <div class="card-body">
+            <div class="card-data">
+                <div class="card-number">30</div>
+                <div class="card-text">Personagens principais</div>
+            </div>
+            <div class="card-icon">
+              <span id="personagens"></span>
+            </div>
+          </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-data">
+              <div class="card-number">56</div>
+              <div class="card-text">Planetas</div>
+          </div>
+          <div class="card-icon">
+            <span id="planetas"></span>
+          </div>
+        </div>
+        <span class="card-div"></span>
+        <div class="card-body">
+            <div class="card-data">
+                <div class="card-number">8</div>
+                <div class="card-text">Luas</div>
+            </div>
+            <div class="card-icon">
+              <span id="luas"></span>
+            </div>
+          </div>
+      </div>
+      <div class="card">
+          <div class="card-body">
+            <div class="card-data">
+                <div class="card-number">22</div>
+                <div class="card-text">Naves super potentes</div>
+            </div>
+            <div class="card-icon">
+              <span id="naves"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="bottom-dashboard">
+      <div class="card card-column card-full">
+        <div class="card-header">
+          <div class="card-title">
+              <span id="menu"></span>
+              <span>Ficha dos personagens</span>
+          </div>
+          <div class="card-options">
+            <div class="form-group has-search" style="margin-bottom: 0;" id="search-characters">
+              <!--<input type="text" class="form-control" placeholder="">-->
+              <span class="glyphicon glyphicon-search"></span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table id="characters-table">
+            <col width="20%">
+            <tr class="table-header">
+              <th style="padding-left: 0;">Nome</th>
+              <th class="align-center">Altura</th>
+              <th class="align-center">Peso</th>
+              <th class="align-center">Cor do cabelo</th>
+              <th class="align-center">Ano de nascimento</th>
+              <th class="align-center">Planeta de nascimento</th>
+              <th class="align-center">Filmes que participa</th>
+            </tr>
+            <tr ng-repeat="x in characters">
+              <td><a style="color: rgb(224, 170, 66);">{{x.name}}</a></td>
+              <td class="align-center">{{x.height}}</td>
+              <td class="align-center">{{x.mass}}</td>
+              <td class="align-center">{{x.hair_color | capitalize}}</td>
+              <td class="align-center">{{x.birth_year}}</td>
+              <td class="align-center"><a style="color: rgb(224, 170, 66);">{{x.homeworld_name}}</a></td>
+              <td class="align-center">{{x.films}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-dashboard">
+    <div class="card card-column">
+      <div class="card-header">
+        <div class="card-title">
+          <span id="pie"></span>
+          <span>5 maiores bilheterias Star Wars</span>
+        </div>
+      </div>
+      <div class="card-body">
+          <div google-chart chart="bilheteriasChart" class="card-chart"></div>
+      </div>
+    </div>
+  </div>
+</div>
